@@ -13,8 +13,8 @@ enum Type {
 	ROBOT_2,
 	SOLDIER_1,
 	SOLDIER_2,
-	SURVIOR_1,
-	SURVIOR_2,
+	SURVIVOR_1,
+	SURVIVOR_2,
 	WOMAN_GREEN,
 	WOMAN_OLD,
 	ZOMBIE_1,
@@ -65,7 +65,7 @@ static func get_anim_name(a: int) -> String:
 		Anim.RELOAD:
 			return 'reload'
 		Anim.SILENCER:
-			return 'gun'
+			return 'silencer'
 		Anim.STAND:
 			return 'stand'
 		_:
@@ -93,9 +93,9 @@ static func get_type_name(a: int) -> String:
 			return 'soldier1'
 		Type.SOLDIER_2:
 			return 'soldier2'
-		Type.SURVIOR_1:
+		Type.SURVIVOR_1:
 			return 'survivor1'
-		Type.SURVIOR_2:
+		Type.SURVIVOR_2:
 			return 'survivor2'
 		Type.WOMAN_GREEN:
 			return 'womanGreen'
@@ -130,9 +130,9 @@ static func get_type_folder(a: int) -> String:
 			return 'Soldier 1'
 		Type.SOLDIER_2:
 			return 'Soldier 2'
-		Type.SURVIOR_1:
+		Type.SURVIVOR_1:
 			return 'Survivor 1'
-		Type.SURVIOR_2:
+		Type.SURVIVOR_2:
 			return 'Survivor 2'
 		Type.WOMAN_GREEN:
 			return 'Woman Green'

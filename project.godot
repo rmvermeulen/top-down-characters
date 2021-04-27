@@ -8,13 +8,19 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Sprite",
+"class": "CharacterSprite",
+"language": "GDScript",
+"path": "res://CharacterSprite.gd"
+} ]
 _global_script_class_icons={
-
+"CharacterSprite": ""
 }
 
 [application]
 
 config/name="top-down-characters"
 config/description="None"
+run/main_scene="res://World.tscn"
 config/version="0.0.0"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://CharacterSprite.gd" type="Script" id=1]
+[ext_resource path="res://assets/Robot 2/robot2_gun.png" type="Texture" id=2]
+[ext_resource path="res://WorldTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://CharacterSprite.cs" type="Script" id=4]
+[ext_resource path="res://assets/Man Old/manOld_silencer.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 50, 50 )
+texture = ExtResource( 5 )
+script = ExtResource( 1 )
+anim = 4
+type = 4
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 51.8899, 122.445 )
+texture = ExtResource( 2 )
+script = ExtResource( 4 )
+Type = 8

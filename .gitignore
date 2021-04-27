@@ -1,5 +1,6 @@
 .import
 .repo
+.mono
 *.log
 # do not add to git, reinstal with gspm
 # use 'addons/*' instead of 'addons' to ignore top-level dirs only
