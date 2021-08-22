@@ -3,17 +3,31 @@ using System;
 
 public enum Type
 {
-    Hitman1, Hitman2,
-    ManBlue, ManBrown, ManOld, ManRed,
-    Robot1, Robot2, Soldier1, Soldier2,
-    Survivor1, Survivor2,
-    WomanGreen, WomanOld,
-    Zombie1, Zombie2
-
+    Hitman1,
+    Hitman2,
+    ManBlue,
+    ManBrown,
+    ManOld,
+    ManRed,
+    Robot1,
+    Robot2,
+    Soldier1,
+    Soldier2,
+    Survivor1,
+    Survivor2,
+    WomanGreen,
+    WomanOld,
+    Zombie1,
+    Zombie2
 }
 public enum Animation
 {
-    Gun, Hold, Machine, Reload, Silencer, Stand
+    Gun,
+    Hold,
+    Machine,
+    Reload,
+    Silencer,
+    Stand
 }
 public class CharacterSprite : Sprite
 {
@@ -29,69 +43,65 @@ public class CharacterSprite : Sprite
     public void ReloadTexture()
     {
         Sprite s = this as Sprite;
-        string folder = GetTypeFolder(Type);
-        string prefix = GetTypeName(Type);
-        string postfix = GetAnimationName(Animation);
+        string folder = GetTypeFolder(Type) ?? "error";
+        string prefix = GetTypeName(Type) ?? "error";
+        string postfix = GetAnimationName(Animation) ?? "error";
         string path = $"res://assets/{folder}/{prefix}_{postfix}.png";
         s.Texture = GD.Load(path) as Texture;
     }
-    private static string GetAnimationName(Animation anim)
-    {
-        switch (anim)
+
+ 
+    private static string? GetAnimationName(Animation anim) =>
+        anim switch
         {
-            case Animation.Gun: return "gun";
-            case Animation.Hold: return "hold";
-            case Animation.Machine: return "machine";
-            case Animation.Reload: return "reload";
-            case Animation.Silencer: return "silencer";
-            case Animation.Stand: return "stand";
+            Animation.Gun => "gun",
+            Animation.Hold => "hold",
+            Animation.Machine => "machine",
+            Animation.Reload => "reload",
+            Animation.Silencer => "silencer",
+            Animation.Stand => "stand",
+            _ => null
         };
-        return "";
-    }
-    private static string GetTypeName(Type type)
-    {
-        switch (type)
+    private static string? GetTypeName(Type type) =>
+        type switch
         {
-            case Type.Hitman1: return "hitman1";
-            case Type.Hitman2: return "hitman2";
-            case Type.ManBlue: return "manBlue";
-            case Type.ManBrown: return "manBrown";
-            case Type.ManOld: return "manOld";
-            case Type.ManRed: return "manRed";
-            case Type.Robot1: return "robot1";
-            case Type.Robot2: return "robot2";
-            case Type.Soldier1: return "soldier1";
-            case Type.Soldier2: return "soldier2";
-            case Type.Survivor1: return "survivor1";
-            case Type.Survivor2: return "survivor2";
-            case Type.WomanGreen: return "womanGreen";
-            case Type.WomanOld: return "womanOld";
-            case Type.Zombie1: return "zombie1";
-            case Type.Zombie2: return "zombie2";
+            Type.Hitman1 => "hitman1",
+            Type.Hitman2 => "hitman2",
+            Type.ManBlue => "manBlue",
+            Type.ManBrown => "manBrown",
+            Type.ManOld => "manOld",
+            Type.ManRed => "manRed",
+            Type.Robot1 => "robot1",
+            Type.Robot2 => "robot2",
+            Type.Soldier1 => "soldier1",
+            Type.Soldier2 => "soldier2",
+            Type.Survivor1 => "survivor1",
+            Type.Survivor2 => "survivor2",
+            Type.WomanGreen => "womanGreen",
+            Type.WomanOld => "womanOld",
+            Type.Zombie1 => "zombie1",
+            Type.Zombie2 => "zombie2",
+            _ => null
         };
-        return "";
-    }
-    private static string GetTypeFolder(Type type)
-    {
-        switch (type)
+    private static string? GetTypeFolder(Type type) =>
+        type switch
         {
-            case Type.Hitman1: return "Hitman 1";
-            case Type.Hitman2: return "Hitman 2";
-            case Type.ManBlue: return "Man Blue";
-            case Type.ManBrown: return "Man Brown";
-            case Type.ManOld: return "Man Old";
-            case Type.ManRed: return "Man Red";
-            case Type.Robot1: return "Robot 1";
-            case Type.Robot2: return "Robot 2";
-            case Type.Soldier1: return "Soldier 1";
-            case Type.Soldier2: return "Soldier 2";
-            case Type.Survivor1: return "Survivor 1";
-            case Type.Survivor2: return "Survivor 2";
-            case Type.WomanGreen: return "Woman Green";
-            case Type.WomanOld: return "Woman Old";
-            case Type.Zombie1: return "Zombie 1";
-            case Type.Zombie2: return "Zombie 2";
+            Type.Hitman1 => "Hitman 1",
+            Type.Hitman2 => "Hitman 2",
+            Type.ManBlue => "Man Blue",
+            Type.ManBrown => "Man Brown",
+            Type.ManOld => "Man Old",
+            Type.ManRed => "Man Red",
+            Type.Robot1 => "Robot 1",
+            Type.Robot2 => "Robot 2",
+            Type.Soldier1 => "Soldier 1",
+            Type.Soldier2 => "Soldier 2",
+            Type.Survivor1 => "Survivor 1",
+            Type.Survivor2 => "Survivor 2",
+            Type.WomanGreen => "Woman Green",
+            Type.WomanOld => "Woman Old",
+            Type.Zombie1 => "Zombie 1",
+            Type.Zombie2 => "Zombie 2",
+            _ => null
         };
-        return "";
-    }
 }
